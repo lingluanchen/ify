@@ -27,7 +27,6 @@
     self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0 , 10, ItemRect.size.width-10, ItemRect.size.height-10)];
     self.imageV.contentMode = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.imageV];
-    
     self.close = [UIButton buttonWithType:UIButtonTypeCustom];
     self.close.frame = CGRectMake(0, 0, 15, 15);
     self.close.center = CGPointMake(CGRectGetMaxX(_imageV.frame), CGRectGetMinY(_imageV.frame));

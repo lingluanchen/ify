@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B35D2A2BD3BF77EAD7F56651 /* libPods-imagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66429247B10DF684F60BC641 /* libPods-imagePicker.a */; };
+		C81AA0171FA344BA00D3CA20 /* WYYFW_icon_add-to@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C81AA0151FA344BA00D3CA20 /* WYYFW_icon_add-to@2x.png */; };
+		C81AA0181FA344BA00D3CA20 /* WYYFW_icon_add-to@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C81AA0161FA344BA00D3CA20 /* WYYFW_icon_add-to@3x.png */; };
 		C855B3D51FA1B5E4000B9D42 /* IfyImageCCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C855B3D41FA1B5E4000B9D42 /* IfyImageCCCollectionViewCell.m */; };
 		C855B3E51FA1BCB8000B9D42 /* ico_check_nomal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C855B3D91FA1BCB7000B9D42 /* ico_check_nomal@3x.png */; };
 		C855B3E61FA1BCB8000B9D42 /* plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C855B3DA1FA1BCB7000B9D42 /* plus@3x.png */; };
@@ -54,6 +56,8 @@
 		55D133F8531E0826877C9E44 /* Pods-imagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imagePicker/Pods-imagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		613135258C319221ED6EBAF8 /* Pods-imagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-imagePicker/Pods-imagePicker.release.xcconfig"; sourceTree = "<group>"; };
 		66429247B10DF684F60BC641 /* libPods-imagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imagePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C81AA0151FA344BA00D3CA20 /* WYYFW_icon_add-to@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WYYFW_icon_add-to@2x.png"; sourceTree = "<group>"; };
+		C81AA0161FA344BA00D3CA20 /* WYYFW_icon_add-to@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WYYFW_icon_add-to@3x.png"; sourceTree = "<group>"; };
 		C855B3D31FA1B5E4000B9D42 /* IfyImageCCCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IfyImageCCCollectionViewCell.h; sourceTree = "<group>"; };
 		C855B3D41FA1B5E4000B9D42 /* IfyImageCCCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IfyImageCCCollectionViewCell.m; sourceTree = "<group>"; };
 		C855B3D61FA1BB38000B9D42 /* IfyTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IfyTools.h; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		C855B3D81FA1BC80000B9D42 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C81AA0151FA344BA00D3CA20 /* WYYFW_icon_add-to@2x.png */,
+				C81AA0161FA344BA00D3CA20 /* WYYFW_icon_add-to@3x.png */,
 				C855B3E21FA1BCB8000B9D42 /* close.png */,
 				C855B3DF1FA1BCB8000B9D42 /* close@2x.png */,
 				C855B3E31FA1BCB8000B9D42 /* close@3x.png */,
@@ -340,11 +346,13 @@
 				C855B3EF1FA1BCB8000B9D42 /* close@3x.png in Resources */,
 				C884D21E1FA195D500FC63E5 /* Assets.xcassets in Resources */,
 				C855B3EA1FA1BCB8000B9D42 /* ico_check_select.png in Resources */,
+				C81AA0181FA344BA00D3CA20 /* WYYFW_icon_add-to@3x.png in Resources */,
 				C855B3E51FA1BCB8000B9D42 /* ico_check_nomal@3x.png in Resources */,
 				C855B3EB1FA1BCB8000B9D42 /* close@2x.png in Resources */,
 				C884D21C1FA195D500FC63E5 /* Main.storyboard in Resources */,
 				C855B3EE1FA1BCB8000B9D42 /* close.png in Resources */,
 				C855B3E61FA1BCB8000B9D42 /* plus@3x.png in Resources */,
+				C81AA0171FA344BA00D3CA20 /* WYYFW_icon_add-to@2x.png in Resources */,
 				C855B3ED1FA1BCB8000B9D42 /* ico_check_select@3x.png in Resources */,
 				C855B3E81FA1BCB8000B9D42 /* ico_check_select@2x.png in Resources */,
 				C855B3EC1FA1BCB8000B9D42 /* plus@2x.png in Resources */,

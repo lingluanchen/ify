@@ -10,16 +10,14 @@
 #import <PhotosUI/PhotosUI.h>
 
 @protocol KSAddPhotoDelegate <NSObject>
-
-//frame改变会调用
-- (void)ifyPhotoChangeSize:(CGSize)currentSize;
-
+@optional
+//frame改变会调用,返回自身rect
+- (void)ifyPhotoChangeSize:(CGRect)rect;
 
 //处理完数据会调用
 - (void)ifyPhotoBigImgDataArray:(NSArray *)imagesData;
 - (void)ifyPhotoThumbnail:(NSArray *)smallImages;
 
-@optional
 
 @end
 

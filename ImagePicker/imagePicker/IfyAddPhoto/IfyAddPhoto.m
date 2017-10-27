@@ -10,9 +10,9 @@
 #import "IfyTools.h"
 #import "IfyHelp.h"
 #import "IfyImageCCCollectionViewCell.h"
-#import <ZLPhotoActionSheet.h>
+#import "ZLPhotoActionSheet.h"
 
-@interface IfyAddPhoto ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface IfyAddPhoto ()<UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate>
 @property (nonatomic, strong) ZLPhotoActionSheet *actionSheet;
 @property (nonatomic, strong) UICollectionView *pickerCollectionView;
 //方形压缩图image 数组
@@ -57,7 +57,7 @@ static NSString * const reuseIdentifier = @"IfyImageCCCollectionViewCell";
 
 - (void)initialization {
     _imageArray = [NSMutableArray array];
-    [_imageArray addObject:@{@"image":@"plus"}];
+    [_imageArray addObject:@{@"image":@"WYYFW_icon_add-to"}];
     _assets = [NSMutableArray array];
     _bigImgDataArray = [NSMutableArray array];
     _bigImageArray = [NSMutableArray array];
@@ -92,6 +92,7 @@ static NSString * const reuseIdentifier = @"IfyImageCCCollectionViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     IfyImageCCCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     [cell refreshWithData:self.imageArray[indexPath.row]];
+    
     cell.closeBlock = ^(id obj) {
         [self deletePhoto:obj];
     };
@@ -115,7 +116,7 @@ static NSString * const reuseIdentifier = @"IfyImageCCCollectionViewCell";
 //定义每个UICollectionView 的 margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 0, 5, 4);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 
@@ -216,20 +217,22 @@ static NSString * const reuseIdentifier = @"IfyImageCCCollectionViewCell";
 
 #pragma mark - 改变view，collectionView高度
 - (void)changeCollectionViewHeight{
-    CGSize currentSize = CGSizeMake(_selfFrame.size.width, (_selfFrame.size.width-20)/4.0*((self.imageArray.count-1)/4+1)+15);
+    CGFloat cellH = (_selfFrame.size.width-15)/4.0;
+    CGFloat cellHCount = (self.imageArray.count-1)/4+1;
+    
+    CGSize currentSize = CGSizeMake(_selfFrame.size.width,(cellH+5)*cellHCount-5);
     if (currentSize.height == _selfFrame.size.height) {
         return;
     }
+    _selfFrame = CGRectMake(_selfFrame.origin.x, _selfFrame.origin.y, currentSize.width, currentSize.height);
     
     [UIView animateWithDuration:0.25 animations:^{
         _pickerCollectionView.frame = CGRectMake(0, 0, currentSize.width, currentSize.height);
-        _selfFrame = CGRectMake(_selfFrame.origin.x, _selfFrame.origin.y, currentSize.width, currentSize.height);
         self.frame = _selfFrame;
     }];
     if ([self.delegate respondsToSelector:@selector(ifyPhotoChangeSize:)]) {
-        [self.delegate ifyPhotoChangeSize:currentSize];
+        [self.delegate ifyPhotoChangeSize:_selfFrame];
     }
-
 }
 
 
@@ -246,6 +249,17 @@ static NSString * const reuseIdentifier = @"IfyImageCCCollectionViewCell";
 }
 - (NSArray*)getImagesData {
     return [_bigImgDataArray copy];
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+/**
+ 解决cell 点击事件被屏蔽问题
+ */
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UICollectionView class]]){
+        return YES;
+    }
+    return NO;
 }
 
 @end
